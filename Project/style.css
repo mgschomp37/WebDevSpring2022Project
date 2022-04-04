@@ -32,13 +32,14 @@ label{
 }
 
 input[type=submit] {
-    background-color: darkred;
+    background: linear-gradient(red 5%, darkred 100%);
     color: white;
     font-size: 20px;
     height: 80px;
     width: 300px;
     border: none;
     cursor: pointer;
+    
     
 
 }
