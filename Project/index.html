@@ -5,10 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type= "image/x-icon" href="dice.png">
+    <link rel="icon" type= "image/x-icon" href="imgs/dice.png">
+    <script src="main.js"></script>
     <title>GameNight</title>
 </head>
-<body>
+<nav>
+    <ul>
+        <li><a href ="index.html"></a>Home/Login</li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="create_event.html">Set Up A Game Night</a></li>
+        <li><a href="about.html"></a></li>
+    </ul>
+</nav>
+<body id="login">
     <h1 class="loginHead">Login here and setup your game night!</h1>
     </h1>
     <br>
@@ -16,7 +25,7 @@
     <div class="container">
         <form action="#someDB" method="POST">
             <label for="username">Username</label>
-            <input type="text" id="email" name="email">
+            <input type="text" id="username" name="username">
             <br><br>
             <label for="pword">Password</label>
             <input type="password" id="pword" name="pword">
@@ -31,6 +40,12 @@
             <input type="submit" value="New User? Register Here!">
         </form>
     </div>
+    <div class="error_msg">
+        <p id="login_error">
+            Invalid Username/Password Combination
+        </p>
+    </div>
+    
     
 </body>
 </html>
