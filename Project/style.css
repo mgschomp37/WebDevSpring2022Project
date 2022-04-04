@@ -1,8 +1,26 @@
-header{
+.loginHead{
     font-family: sans-serif;
-    font-size: 17px;
-    background-color: slateblue;
-    display: inline-block;
-    justify-content: center;
+    color: slateblue;
+    margin: auto;
+    width: 50%;
+    padding: 15px;
     text-align: center;
+
+}
+
+
+
+.container{ 
+    margin: auto;
+    width: 50%;
+    padding: 15px;
+    border: 3px skyblue;
+    border-style: outset;
+    text-align: center;
+
+}
+
+input[type=submit] {
+    background-color: red;
+    color: white;
 }

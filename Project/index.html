@@ -5,13 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type= "image/x-icon" href="dice.png">
     <title>GameNight</title>
 </head>
 <body>
-    <header>
-        <h2>Login Here to start a game night!</h2>
-    </header>
-    <div>
+    <h1 class="loginHead">Login here and setup your game night!</h1>
+    </h1>
+    <br>
+    <br>
+    <div class="container">
         <form action="#someDB" method="POST">
             <label for="username">Username</label>
             <input type="text" id="email" name="email">
@@ -21,11 +23,12 @@
             <br><br>
             <input type="submit" value="Login">
         </form>
+        <br>
+        <br>
 
-        <form>
-            <a href="register.html">
-                <input type="submit" value="New User? Register">
-            </a>
+
+        <form action="register.html">
+            <input type="submit" value="New User? Register Here!">
         </form>
     </div>
     
