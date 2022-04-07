@@ -3,10 +3,11 @@
     color: slateblue;
     margin: auto;
     width: 50%;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     background-color:aliceblue;
     border-radius: 32px;
+
 
 }
 
@@ -65,4 +66,32 @@ input[type=submit]:hover{
     background-image: url('imgs/catan.jpg');
     background-attachment: fixed;
     background-size: 100% 100%;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    position: fixed;
+    background-color:blueviolet;
+    height: 30%;
+    position: fixed;
+    overflow: auto;
+}
+
+
+li a:hover{
+    background-color: plum;
+}
+
+
+li a{
+    display: block;
+    color: antiquewhite;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    background-color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
