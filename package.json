@@ -1,0 +1,30 @@
+{
+  "name": "gamenight",
+  "version": "1.0.0",
+  "description": "application to get users together for gmae nights",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mgschomp37/WebDevSpring2022Project.git"
+  },
+  "keywords": [
+    "game",
+    "social"
+  ],
+  "author": "Michael Schomp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mgschomp37/WebDevSpring2022Project/issues"
+  },
+  "homepage": "https://github.com/mgschomp37/WebDevSpring2022Project#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
