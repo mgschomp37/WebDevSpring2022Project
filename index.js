@@ -3,7 +3,20 @@ const app = express();
 
 const userRoutes = require("./server/routes/user");
 
+//CORS middleware
+app.use(function(_req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    next();
+});
+
 app.use("/users", userRoutes);
+
+app.get('*', function(_req,res) {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'))
+})
+
 
 const PORT = process.env.PORT || 3000;
 
