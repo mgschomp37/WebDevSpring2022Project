@@ -3,7 +3,7 @@ const { append } = require('express/lib/response');
 const User = require('../models/user');
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', (_req, res) => {
     try{
         const users = User.getUsers();
         res.send(users);
