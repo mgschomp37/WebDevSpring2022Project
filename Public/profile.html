@@ -8,24 +8,29 @@
     <link rel="icon" type= "image/x-icon" href="imgs/dice.png">
     <title>User Profile</title>
 </head>
-<nav>
-    <ul>
-        <li><a href="index.html"></a>Home/Login</li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="create_event.html">Set Up A Game Night</a></li>
-        <li class="lastbar"><a href="about.html"></a></li>
-    </ul>
-</nav>
+<nav class = "navbar">
+    <a href="index.html">Home</a>
+    <a class ="active" href="profile.html">Profile</a>
+    <a href="create_event.html">Set Up A Game Night</a>
+    <a href="about.html">About Us</a>
+ </nav>
 <body>
-    <div class="profile-info">
-        <p class="info">Usernames Profile</p>
-        <p class="info">First Name, Last Name</p>
-        <p class="info">City, State</p>
-    </div>
-    <div class="games">
-        <p>List of games owned:</p>
-
-        <p>List of games wanting to play:</p>
+    <div class = "profile_background">
+        <div class="profile_info">
+            <p class="info">Usernames Profile</p>
+            <p class="info">First Name, Last Name</p>
+            <p class="info">City, State</p>
+        </div>
+        <div class="games">
+            <p>List of games owned:</p>
+    
+            <p>List of games wanting to play:</p>
+        </div>
+        <div class = "edit-profile-button" >
+            <form action="editprofile.html">
+                <input type="submit" value="Edit Profile">
+            </form>
+        </div>
     </div>
     
 </body>
