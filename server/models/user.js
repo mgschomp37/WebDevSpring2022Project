@@ -14,5 +14,13 @@ const users = [
 //function to get all users
 let getUsers = () => users;
 
+function login(username, pword) {
+    const user = users.filter((u) => u.username === username);
+    if(!user[0]) throw Error("User not found");
+    if(user[0].pword !== pword) throw Error("Incorrect password");
+
+    return user[0];
+}
+
 //need to export to allow access
-module.exports = { getUsers };
+module.exports = { getUsers, login };
