@@ -22,5 +22,22 @@ function login(username, pword) {
     return user[0];
 }
 
+function register(user) {
+    const u = userExists(user.username);
+    if(u.length > 0) throw Error("Username already exists");
+    const newUser = {
+        userID: [users.length - 1].userID + 1,
+        username: user.username,
+        pword: user.pword
+}
+    users.push(newUser);
+
+    return newUser;
+}
+
+function (userExists){
+    return users.filter((u) => u.username === user.username);
+}
+
 //need to export to allow access
-module.exports = { getUsers, login };
+module.exports = { getUsers, login, register, deleteUser };

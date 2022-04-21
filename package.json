@@ -1,7 +1,7 @@
 {
   "name": "gamenight",
   "version": "1.0.0",
-  "description": "application to get users together for gmae nights",
+  "description": "application to get users together for game nights",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
