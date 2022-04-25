@@ -19,5 +19,6 @@ function register(e){
         const errText = err.message;
         document.querySelector("#reg-form p.error").innerHTML = errText;
         document.getElementById("password").value = "";
-        console.log(`Error: ${errText}`)
+        console.log(`Error: ${errText}`);
 });
+}

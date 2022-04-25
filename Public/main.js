@@ -1,8 +1,8 @@
 class User{
-    constructor(id, username, pword){
+    constructor(id, username, password){
         this.userID = id;
-        this.username = username;
-        this.pword = pword;
+        this.userName = username;
+        this.pWord = password;
         
     }
 
@@ -12,11 +12,11 @@ class User{
     }
 
     getUsername(){
-        return this.username;
+        return this.userName;
     }
 
     getPword(){
-        return this.pword
+        return this.pWord
     }
 
     setUserId(id){
@@ -24,7 +24,33 @@ class User{
     }
 
     setUsername(username){
-        this.username = username;
+        this.userName = username;
     }
 }
 
+
+const nav = document.querySelector("nav");
+if(getCurrentUser()){
+    nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="logout">Logout</a>
+        <a href="about.html">About</a>
+    `;
+}
+
+else{
+    nav.innerHTML = `
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="about.html">About</a>
+    `;
+}
+
+function setCurrentUser(user){
+    localStorage.setItem("user", JSON.stringify(user));
+}
+
+function removeCurrentUser(){
+    localStorage.removeItem("user");
+}
