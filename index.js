@@ -3,6 +3,8 @@ const app = express();
 
 const userRoutes = require("./server/routes/user");
 
+
+
 //CORS middleware
 app.use(function(_req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");

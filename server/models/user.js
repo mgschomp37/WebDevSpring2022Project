@@ -35,8 +35,8 @@ function register(user) {
     return newUser;
 }
 
-function (userExists){
-    return users.filter((u) => u.username === user.username);
+function userExists(username) {
+    return users.filter((u) => u.username === username);
 }
 
 //need to export to allow access

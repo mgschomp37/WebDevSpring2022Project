@@ -10,7 +10,7 @@ function login(e){
         }
     })
     .catch((err) => {
-        const errText = error.message;
+        const errText = err.message;
         console.log(`Error: ${errText}`)
 });
 
