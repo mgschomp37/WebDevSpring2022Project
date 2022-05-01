@@ -75,18 +75,47 @@ profile.innerHTML = `
         let location = document.getElementById("location").value;
         let ownGame = document.getElementById("own-game").value;
         let wantGame = document.getElementById("want-game").value;
-        postData('http://localhost:3000/profile', {username: username, password: password, location: location, gamesOwned: ownGame, gamesWantingToPlay: wantGame})
-        .then((data) => {
-            if(!data.message) {
-                setCurrentUser(data);
-                window.location.href = "profile.html";
-            }
-        })
-        .catch((err) => {
-            const errText = err.message;
-            console.log(`Error: ${errText}`)
-        });
+        
+        if(username === user.username){
+            let err = "No Changes Made";
+            document.querySelector("#edit-profile-form p.error").innerHTML = err;
+        } else{
+            fetchData('/users/update', {userId: user.user_id, username: username, password: password, location: location, gamesOwned: ownGame, gamesWantingToPlay: wantGame})
+            .then((data) => {
+                if(!data.message) {
+                    removeCurrentUser();
+                    setCurrentUser(data);
+                    window.location.href = "profile.html"
+                }
+            })
+            .catch((err) => {
+                const errText = err.message;
+                document.querySelector("#edit-profile-form p.error").innerHTML = errText;
+                console.log(`Error: ${errText}`)
+            })
+        }
     }
+
+    function deleteProfile(){
+        if (confirm("Are you sure you want to delete your profile?")) {
+            fetchData('/users/delete',{userId: user.user_id}, "DELETE")
+            .then((data) => {
+                if(!data.message) {
+                    console.log(data.success)
+                    logout();
+                    window.location.href = "register.html"
+
+                }
+            })
+            .catch((err) => {
+                const errText = err.message;
+                document.querySelector("#profile div p.error").innerHTML = errText;
+                console.log(`Error: ${errText}`)
+            })
+        
+    }
+}
+
                 
             
             
