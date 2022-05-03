@@ -1,3 +1,5 @@
+import { response } from "express";
+
 class User{
     constructor(id, username, password){
         this.userID = id;
@@ -47,10 +49,43 @@ else{
     `;
 }
 
+export async function fetchData(url = '', data = {}, methodType){
+    const respose = await fetch(`http://localhost:3000/${url}`, {
+        method: methodType,
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    });
+    if(response.ok){
+        return await response.json();
+    } else {
+        throw await response.json();
+    }
+}
 function setCurrentUser(user){
     localStorage.setItem("user", JSON.stringify(user));
 }
 
 function removeCurrentUser(){
     localStorage.removeItem("user");
+}
+
+function getCurrentUser(){
+    return JSON.parse(localStorage.getItem("user"));
+}
+
+export const logoutBtn = document.getElementById("logout");
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", logout)
+    }
+
+function logout(){
+    removeCurrentUser();
+    window.location.href = "login.html";
 }
