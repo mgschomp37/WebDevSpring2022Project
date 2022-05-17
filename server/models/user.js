@@ -5,6 +5,10 @@ async function createTable() {
         userID INT NOT NULL AUTO_INCREMENT,
         username VARCHAR(255) NOT NULL,
         pword VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        fname VARCHAR(255) NOT NULL,
+        lname VARCHAR(255) NOT NULL,
+        FOREIGN KEY (userID) REFERENCES games(gameID),
         PRIMARY KEY (userID)
     )`;
     await con.query(sql);

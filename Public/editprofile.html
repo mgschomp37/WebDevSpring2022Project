@@ -23,6 +23,12 @@
     <h3>Use the form to edit your profile page</h3>
 
     <form action="gamenight_db" method="POST">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname">
+        <br>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname">
+        <br>
         <label for="pword">Change Password</label>
         <input type="password" id="change_password" name="change_password">
         <br>
@@ -34,6 +40,9 @@
         <br>
         <label for="games_played">Games You Want To Play:</label>
         <input type="text" id="games_played" name="games_played">
+        <br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location">
         <br>
         <input type="submit" value="Submit">
     </form>
