@@ -15,3 +15,27 @@ async function createTable() {
 }
 createTable();
 
+async function addEvent(event) {
+    const sql = `INSERT INTO events (eventName, eventDate, eventTime, eventLocation) VALUES ("${event.eventName}", "${event.eventDate}", "${event.eventTime}", "${event.eventLocation}")`;
+    const insert = await connection.query(sql);
+    const newEvent = await getEvent(event);
+    return newEvent[0];
+}
+function getEvent(event) {
+    let sql;
+    if(event.eventId) {
+        sql = `SELECT * FROM events
+            WHERE event_id = ${event.eventId}`;
+    } else {
+        sql = `SELECT`
+    }
+}
+
+async function deleteEvent(event) {
+    const sql = `DELETE FROM events
+        WHERE event_id = ${event.eventId}`;
+    const deleteEvent = await connection.query(sql);
+    return deleteEvent;
+}
+
+
