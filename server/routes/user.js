@@ -33,4 +33,25 @@ router.post('/register', async (req, res) => {
 
     
 })
+
+router.put('/edit', async (req, res) => {
+    try{
+        const user = await User.editUser(req.body);
+        console.log(user);
+        res.send({...user, pword: undefined});
+    }
+    catch (err) {
+        res.status(401).send({message: err.message});
+    }
+})
+
+router.delete('/delete', async (req, res) => {
+    try {
+        await User.deleteUser(req.body.userId);
+        res.send({message: "User deleted"});
+    }
+    catch (err) {
+        res.status(401).send({message: err.message});
+    }
+})
 module.exports = router; 

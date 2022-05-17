@@ -1,21 +1,34 @@
-const users = [
-    {
-        userID: 24680,
-        username: "mu1234",
-        pword: "Applesauce12"
-    },
-    {
-        userID: 51892,
-        username: "bobobo543",
-        pword: "jellyJiggler99"
+const connection = require("./db_connect");
 
-    }
-];
+async function createTable() {
+    let sql = `CREATE TABLE IF NOT EXISTS users (
+        userID INT NOT NULL AUTO_INCREMENT,
+        username VARCHAR(255) NOT NULL,
+        pword VARCHAR(255) NOT NULL,
+        PRIMARY KEY (userID)
+    )`;
+    await con.query(sql);
+}
+createTable();
+
 //function to get all users
-let getUsers = () => users;
+let getUsers = async () => {
+    const sql = "SELECT * FROM users";
+    return await con.query(sql);
+};
+
+async function getUser(user) {
+    let sql;
+    if(user.userId) {
+        sql = `SELECT * FROM users
+            WHERE user_id = ${user.userId}`;
+    } else {
+        sql = `SELECT`
+    }
+}
 
 function login(username, pword) {
-    const user = users.filter((u) => u.username === username);
+    const user = await userExists(username);
     if(!user[0]) throw Error("User not found");
     if(user[0].pword !== pword) throw Error("Incorrect password");
 
@@ -25,19 +38,35 @@ function login(username, pword) {
 function register(user) {
     const u = userExists(user.username);
     if(u.length > 0) throw Error("Username already exists");
-    const newUser = {
-        userID: [users.length - 1].userID + 1,
-        username: user.username,
-        pword: user.pword
-}
-    users.push(newUser);
+    const sql = `INSERT INTO users (username, pword) VALUES ("${user.username}", "${user.pword}")`;
 
-    return newUser;
+    const insert = await con.query(sql);
+    const newuser = await getUser(user);
+    return newUser[0];
 }
 
 function userExists(username) {
-    return users.filter((u) => u.username === username);
+    const sql = `"SELECT * FROM users WHERE username = "${username}"`;
+    let u = await connection.query(sql);
+    console.log(u);
+    return u; 
+}
+
+async function editUser(user){
+    const sql = `UPDATE users SET
+    username = "{$user.username}"
+    WHERE user_id = ${user.userId}`;
+
+    const update = await connection.query(sql);
+    const newUser = await getUser(user);
+    return newUser[0];
+    
+}
+
+async function deleteUser(userId){
+    const sql = `DELETE FROM users WHERE user_id = ${userId}`;
+    await connection.query(sql);
 }
 
 //need to export to allow access
-module.exports = { getUsers, login, register, deleteUser };
+module.exports = { getUsers, login, register, deleteUser, editUser, createTable };

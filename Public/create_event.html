@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type= "image/x-icon" href="imgs/dice.png">
-    <title>Document</title>
+    <title>Create Event</title>
 </head>
 <nav>
     <ul>
@@ -17,6 +17,33 @@
     </ul>
 </nav>
 <body>
+    <h1>Create an Event</h1>
+    <h3>Use the form to create an event</h3>
+
+    <div class="container">
+        <form action="#someDB" method="POST">
+            <label for="event_name">Event Name</label>
+            <input type="text" id="event_name" name="event_name">
+            <br>
+            <label for="event_date">Event Date</label>
+            <input type="date" id="event_date" name="event_date">
+            <br>
+            <label for="event_time">Event Time</label>
+            <input type="time" id="event_time" name="event_time">
+            <br>
+            <label for="event_location">Event Location</label>
+            <input type="text" id="event_location" name="event_location">
+            <br>
+            <label for="game">Game</label>
+            <input type="text" id="game" name="game">
+            <br>
+            <label for="invite_users">Invite Players</label>
+            <input type="text" id="invite_users" name="invite_users">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
     
 </body>
 </html>

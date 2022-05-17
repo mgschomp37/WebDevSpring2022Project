@@ -22,14 +22,23 @@
     <h1>Edit Profile</h1>
     <h3>Use the form to edit your profile page</h3>
 
-    <form action="#someDB" method="POST">
+    <form action="gamenight_db" method="POST">
         <label for="pword">Change Password</label>
         <input type="password" id="change_password" name="change_password">
         <br>
         <label for="rtpword">Retype Password</label>
-        <input type="text">
+        <input type="password" id="retype_password" name="retype_password">
+        <br>
         <label for="games_owned">Games You Own:</label>
+        <input type="text" id="games_owned" name="games_owned">
+        <br>
+        <label for="games_played">Games You Want To Play:</label>
+        <input type="text" id="games_played" name="games_played">
+        <br>
+        <input type="submit" value="Submit">
     </form>
+
+
     
 </body>
 </html>
