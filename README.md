@@ -5,12 +5,12 @@ GameNight is an in-progress Social Media app that is meant to get people togethe
 Future plans besides completing the originaly intended functions of the website include implementing a new section for-pickup games of sports, implementing the chat room lobby with socket.io, implement location services so that people within a range can be found.
 
 # This app is built with the following:
-HTML
-Node.js
-JavaScript
-CSS
-Express
-MySQL server
+- HTML
+- Node.js
+- JavaScript
+- CSS
+- Express
+- MySQL server
 
 Installing involves the following after having Node.js installed
 - npm init
