@@ -1,5 +1,4 @@
 const express = require('express');
-const { append } = require('express/lib/response');
 const User = require('../models/user');
 const router = express.Router();
 
@@ -54,4 +53,5 @@ router.delete('/delete', async (req, res) => {
         res.status(401).send({message: err.message});
     }
 })
+
 module.exports = router; 

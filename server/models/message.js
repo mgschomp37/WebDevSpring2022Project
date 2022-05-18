@@ -1,4 +1,4 @@
-const connection = require('../db_connect');
+const connection = require('./db_connect');
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS messages (
         messageID INT NOT NULL AUTO_INCREMENT,
