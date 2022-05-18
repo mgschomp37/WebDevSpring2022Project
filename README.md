@@ -24,4 +24,4 @@ Current issues include inability issues with running npm run dev and the module 
 
 #ER Model
 
-![ER Diagram](doc/img/erd.png)
+![ER Diagram](doc/img/ERModel.png)
