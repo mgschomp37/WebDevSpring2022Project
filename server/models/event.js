@@ -1,4 +1,4 @@
-const connection = require('../db_connect');
+const connection = require("../models/db_connect");
 
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS events (
@@ -38,4 +38,5 @@ async function deleteEvent(event) {
     return deleteEvent;
 }
 
+module.exports = {addEvent, getEvent, deleteEvent};
 

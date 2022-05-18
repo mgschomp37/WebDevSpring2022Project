@@ -31,4 +31,4 @@ connection.connect(function(err){
     });
 });
 
-module.exports = {connecion, query}
+module.exports = {connection, query}

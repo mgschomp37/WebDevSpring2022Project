@@ -1,9 +1,16 @@
-require('dotenv').config();
+const path = require('path');
 const express = require('express');
 const app = express();
 
 const userRoutes = require("./server/routes/user");
+const gameRoutes = require("./server/routes/game");
+const eventRoutes = require("./server/routes/event");
+const messageRoutes = require("./server/routes/message");
 
+
+app.use(express.json());
+app.use(express.static(__dirname, '/public'));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
 
 //CORS middleware
@@ -15,6 +22,9 @@ app.use(function(_req, res, next) {
 });
 
 app.use("/users", userRoutes);
+app.use("/games", gameRoutes);
+app.use("/events", eventRoutes);
+app.use("/messages", messageRoutes);
 
 app.get('*', function(_req,res) {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'))

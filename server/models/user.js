@@ -1,4 +1,4 @@
-const connection = require("./db_connect");
+const connection = require("db_connect");
 
 async function createTable() {
     let sql = `CREATE TABLE IF NOT EXISTS users (
@@ -31,7 +31,7 @@ async function getUser(user) {
     }
 }
 
-function login(username, pword) {
+async function login(username, pword) {
     const user = await userExists(username);
     if(!user[0]) throw Error("User not found");
     if(user[0].pword !== pword) throw Error("Incorrect password");
@@ -39,7 +39,7 @@ function login(username, pword) {
     return user[0];
 }
 
-function register(user) {
+async function register(user) {
     const u = userExists(user.username);
     if(u.length > 0) throw Error("Username already exists");
     const sql = `INSERT INTO users (username, pword) VALUES ("${user.username}", "${user.pword}")`;
@@ -49,7 +49,7 @@ function register(user) {
     return newUser[0];
 }
 
-function userExists(username) {
+async function userExists(username) {
     const sql = `"SELECT * FROM users WHERE username = "${username}"`;
     let u = await connection.query(sql);
     console.log(u);
