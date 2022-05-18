@@ -20,8 +20,15 @@ Installing involves the following after having Node.js installed
 - if using VSCode, open up the index.html file and run the live server extension
 - npm run dev
 
-Current issues include inability issues with running npm run dev and the module for db_connect not being found. Chat room is incomplete as well as the CSS for the events page
+Current issues include inability issues with running npm run dev and the module for db_connect not being found. Chat room is incomplete as well as the CSS for the profile page 
 
 # ER Model
 
 ![ER Diagram](/doc/img/ERModel.png)
+
+# Login Page
+
+![Login](/doc/img/gamenightlogin.png)
+
+# Register 
+![Register](/doc/img/gamenightregister.png)
